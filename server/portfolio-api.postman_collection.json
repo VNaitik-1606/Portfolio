@@ -1,0 +1,51 @@
+{
+  "info": {
+    "name": "Portfolio API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [{ "key": "baseUrl", "value": "http://localhost:5000" }],
+  "item": [
+    { "name": "Health Check", "request": { "method": "GET", "url": "{{baseUrl}}/api/health" } },
+    { "name": "Get Profile", "request": { "method": "GET", "url": "{{baseUrl}}/api/profile" } },
+    {
+      "name": "Update Profile",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/api/profile",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Naitik\",\n  \"tagline\": \"Full-Stack Developer\",\n  \"intro\": \"Updated intro text\"\n}"
+        }
+      }
+    },
+    { "name": "Get Projects", "request": { "method": "GET", "url": "{{baseUrl}}/api/projects" } },
+    {
+      "name": "Create Project",
+      "request": {
+        "method": "POST",
+        "url": "{{baseUrl}}/api/projects",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"New Project\",\n  \"description\": \"Description here\",\n  \"techStack\": [\"React\", \"Node.js\"],\n  \"githubUrl\": \"https://github.com/you/repo\"\n}"
+        }
+      }
+    },
+    { "name": "Get Skills", "request": { "method": "GET", "url": "{{baseUrl}}/api/skills" } },
+    { "name": "Get Certifications", "request": { "method": "GET", "url": "{{baseUrl}}/api/certifications" } },
+    {
+      "name": "Send Contact Message",
+      "request": {
+        "method": "POST",
+        "url": "{{baseUrl}}/api/contact",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Test User\",\n  \"email\": \"test@example.com\",\n  \"subject\": \"Hi\",\n  \"body\": \"Testing the contact form\"\n}"
+        }
+      }
+    },
+    { "name": "Get Messages", "request": { "method": "GET", "url": "{{baseUrl}}/api/contact" } }
+  ]
+}
